@@ -41,3 +41,19 @@ service/TaskService.java
 curl -X POST http://localhost:8080/api/v1/tasks \
 -H "Content-Type: application/json" \
 -d '{"title": "Изучить DI"}'
+
+## День 4: Валидация + DTO + ResponseEntity
+
+### Новое:
+- dto/CreateTaskRequest.java` — с `@NotBlank
+- controller/GlobalExceptionHandler.java
+- ResponseEntity' + `201 Created
+- @Valid' + кастомные ошибки
+
+### POST /api/v1/tasks
+bash
+curl -X POST http://localhost:8080/api/v1/tasks \
+  -H "Content-Type: application/json" \
+  -d '{"title": "Изучить валидацию"}' \
+  -i
+ → HTTP/1.1 201 Created

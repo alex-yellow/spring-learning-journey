@@ -1,5 +1,6 @@
 package com.example.springlearningjourney.service;
 
+import com.example.springlearningjourney.dto.TaskDTO;
 import com.example.springlearningjourney.model.Task;
 import org.springframework.stereotype.Service;
 
@@ -14,8 +15,8 @@ public class TaskService {
     public List<Task> getAll(){
         return new ArrayList<>(tasks);
     }
-    public Task crate(String title){
-        Task task = new Task(nextId++, title, false);
+    public Task crate(TaskDTO taskDTO){
+        Task task = new Task(nextId++, taskDTO.getTitle(), false);
         tasks.add(task);
         return task;
     }
