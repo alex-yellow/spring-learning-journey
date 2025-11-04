@@ -57,3 +57,15 @@ curl -X POST http://localhost:8080/api/v1/tasks \
   -d '{"title": "Изучить валидацию"}' \
   -i
  → HTTP/1.1 201 Created
+
+## День 5: Spring Data JPA + H2
+
+### Новое:
+- entity/TaskEntity.java — JPA-сущность
+- repository/TaskRepository.java — JpaRepository
+- application.yml — H2 + show-sql
+- H2 Console: http://localhost:8080/h2-console
+
+### SQL:
+sql
+SELECT * FROM TASKS;
