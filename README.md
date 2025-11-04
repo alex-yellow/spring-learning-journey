@@ -23,6 +23,21 @@
 
 ### Примеры:
 
-```bash
+
 curl http://localhost:8080/api/v1/hello
-# → Привет, Spring! Это ДЕНЬ 2!
+
+## День 3: Модель + Сервис + DI
+
+### Новая структура:
+model/Task.java
+service/TaskService.java
+
+### Эндпоинты задач:
+| Метод | URL | Описание |
+|-------|-----|---------|
+| GET | `/api/v1/tasks` | Все задачи |
+| POST | `/api/v1/tasks` | Создать задачу |
+
+curl -X POST http://localhost:8080/api/v1/tasks \
+-H "Content-Type: application/json" \
+-d '{"title": "Изучить DI"}'
