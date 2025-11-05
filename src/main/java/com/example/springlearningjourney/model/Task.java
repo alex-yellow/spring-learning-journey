@@ -10,14 +10,16 @@ public class Task {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
 
-    @NotBlank(message = "The field title is requires")
+    @Column(nullable = false)
     public String title;
 
+    @Column(nullable = false)
     public boolean completed;
 
     public Task(){}
 
-    public Task(String title, boolean completed) {
+    public Task(Long id, String title, boolean completed) {
+        this.id = id;
         this.title = title;
         this.completed = completed;
     }
