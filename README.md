@@ -69,3 +69,21 @@ curl -X POST http://localhost:8080/api/v1/tasks \
 ### SQL:
 sql
 SELECT * FROM TASKS;
+
+## День 11: Юнит-тесты (TaskService)
+
+### Покрытие:
+- getAllTasks()
+- createTask()
+- updateTask() (успех + 404)
+- deleteTask() (успех + 404)
+
+### Технологии:
+- JUnit 5
+- Mockito
+- @ExtendWith(MockitoExtension.class)
+- @Mock, @InjectMocks
+
+### Запуск:
+bash
+./mvnw test

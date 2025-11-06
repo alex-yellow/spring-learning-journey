@@ -29,7 +29,9 @@ public class TaskService {
         updatedTask.setCompleted(task.isCompleted());
         return taskRepository.save(updatedTask);
     }
-    public void deleteTask(Long id){
-        taskRepository.deleteById(id);
+    public void deleteTask(Long id) {
+        Task task = taskRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Task not found"));
+        taskRepository.delete(task);
     }
 }
