@@ -87,3 +87,22 @@ SELECT * FROM TASKS;
 ### Запуск:
 bash
 ./mvnw test
+
+## День 12: Интеграционные тесты контроллера
+
+### Технологии:
+- @WebMvcTest(TaskController.class)
+- MockMvc
+- @MockBean` для `TaskService` и `TaskMapper
+- ObjectMapper` для JSON
+- Проверка статусов: `201`, `200`, `204`, `400`, `404`
+
+### Покрытие:
+- POST /tasks (успех + валидация)
+- GET /tasks
+- PUT /tasks/{id} (успех + 404)
+- DELETE /tasks/{id}
+
+### Запуск:
+bash
+./mvnw test
